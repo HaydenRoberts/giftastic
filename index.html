@@ -16,8 +16,26 @@
 <body>
     <div class="container-fluid">
         <div class="row header">
-            <div class="logo"><span id="gif">Gif</span><span id="tastic">Tastic</span></div>
+            <div class="logo">
+                <span id="gif">Gif</span><span id="tastic">Tastic</span>
+            </div>
+
+            <div class="search">
+                <form id="sports">
+                    <!-- <label for="animal-input"></label> -->
+                    <input type="text" value="Add a sport..." id="sport-input">
+
+                    <input type="button" value="Submit" id="submit-btn">
+                </form>
+            </div>
         </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="buttons"></div>
+        </div>
+        <div class="all-sports"></div>
     </div>
 
     <script src="script.js"></script>
