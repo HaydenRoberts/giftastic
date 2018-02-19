@@ -73,3 +73,37 @@ body {
 .sports-btn:hover {
     background-color: rgba(77, 160, 228, 0.8);
 }
+
+.gif-title {
+    background-color: rgb(51, 51, 51);
+    font-family: 'Cabin', sans-serif;
+    font-size: 15px;
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+}
+
+.gif-results {
+    background-color: rgb(211, 211, 211);
+    position: relative;
+    border-radius: 5px;
+}
+
+.gif {
+    padding: 10px;
+    display: inline-block;
+    text-align: center;
+}
+
+.rating {
+    font-family: 'Cabin', sans-serif;
+    width: 45px;
+    margin: 0 auto;
+    border-radius: 5px;
+    /* background-color:rgb(51, 51, 51); */
+    color: rgb(51, 51, 51);
+}
+
+p {
+    margin-bottom: 0;
+}
