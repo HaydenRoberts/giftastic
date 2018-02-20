@@ -55,7 +55,7 @@ $(document).on('click', '.sports-btn', function () {
                 $(this).attr('src', results[value].images.fixed_height.url);
                 $(this).attr('data-state', 'animate');
                 console.log('if');
-            } else {
+            } else if (state === 'animate') {
                 $(this).attr('src', results[value].images.fixed_height_still.url);
                 $(this).attr('data-state', 'still');
                 console.log('else');
