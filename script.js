@@ -21,7 +21,6 @@ $(document).on('click', '.sports-btn', function () {
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + userInput + "&limit=10&api_key=SWve0WZXbWtP1dGMDbhm08zaiqcHvIrp";
     // console.log(this);
     console.log(userInput);
-
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -33,9 +32,8 @@ $(document).on('click', '.sports-btn', function () {
             $(rating).attr('class', 'rating');
 
             var gifImageStill = $('<img>');
-            var gifImageAnimate = results[i].images.fixed_height.url;
-            // $(gifImageAnimate).attr('data-state', 'animate');
-            // $(gifImageAnimate).attr('class', 'gif-image');
+            $(gifImageStill).attr('data-animate', results[i].images.fixed_height.url);
+            $(gifImageStill).attr('data-still', results[i].images.fixed_height_still.url);
 
             $(gifImageStill).attr('src', results[i].images.fixed_height_still.url);
             $(gifImageStill).attr('class', 'gif-image');
@@ -46,20 +44,20 @@ $(document).on('click', '.sports-btn', function () {
             $(gifDiv).append(gifImageStill);
             $('.gif-results').append(gifDiv);
         }
-
-        $(document).on('click',".gif-image", function(){
-            var state = $(this).attr("data-state");
-            var value = $(this).attr("value");
-            // console.log('hello');
-            if (state === 'still') {
-                $(this).attr('src', results[value].images.fixed_height.url);
-                $(this).attr('data-state', 'animate');
-                console.log('if');
-            } else {
-                $(this).attr('src', results[value].images.fixed_height_still.url);
-                $(this).attr('data-state', 'still');
-                console.log('else');
-            }
-        })
     });
+})
+
+$(document).on('click',".gif-image", function(){
+    var state = $(this).attr("data-state");
+    var value = $(this).attr("value");
+    // console.log('hello');
+    if (state === 'still') {
+        $(this).attr("src", $(this).data('animate'));
+        $(this).attr('data-state', 'animate');
+        console.log('if');
+    } else {
+        $(this).attr("src", $(this).data('still'));
+        $(this).attr('data-state', 'still');
+        console.log('else');
+    }
 })
