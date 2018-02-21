@@ -33,14 +33,14 @@ $(document).on('click', '.sports-btn', function () {
             $(rating).attr('class', 'rating');
 
             var gifImageStill = $('<img>');
-            // var gifImageAnimate = results[i].images.fixed_height.url;
+            var gifImageAnimate = results[i].images.fixed_height.url;
             // $(gifImageAnimate).attr('data-state', 'animate');
+            // $(gifImageAnimate).attr('class', 'gif-image');
 
             $(gifImageStill).attr('src', results[i].images.fixed_height_still.url);
             $(gifImageStill).attr('class', 'gif-image');
             $(gifImageStill).attr('data-state', 'still');
             $(gifImageStill).attr('value', i);
-            $(gifImageStill).attr('value');
             $(gifDiv).append(rating);
             $(gifDiv).append('<br>');
             $(gifDiv).append(gifImageStill);
@@ -50,12 +50,12 @@ $(document).on('click', '.sports-btn', function () {
         $(document).on('click',".gif-image", function(){
             var state = $(this).attr("data-state");
             var value = $(this).attr("value");
-            console.log('hello');
+            // console.log('hello');
             if (state === 'still') {
                 $(this).attr('src', results[value].images.fixed_height.url);
                 $(this).attr('data-state', 'animate');
                 console.log('if');
-            } else if (state === 'animate') {
+            } else {
                 $(this).attr('src', results[value].images.fixed_height_still.url);
                 $(this).attr('data-state', 'still');
                 console.log('else');
